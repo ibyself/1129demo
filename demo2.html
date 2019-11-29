@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>太极图</title>
+		<style type="text/css">
+			body{
+				background: #ccc;
+			}
+			.wrap{
+				width:300px;
+				height: 300px;
+				margin: 100px auto;
+				border-radius: 50%;
+				position: relative;
+				animation:taiji 5s linear infinite;
+			}
+			.left,.right{
+				width:150px;
+				height: 300px;
+				float:left;
+			}
+			.left{
+				border-radius: 150px 0 0 150px;
+				background: black;
+			}
+			.right{
+				border-radius: 0 150px 150px 0;
+				background:#fff;
+			}
+			.circle{
+				width: 30px;
+				height:30px;
+				position: absolute;
+				left:0;
+				right:0;
+				top:0;
+				bottom:0;
+				margin: auto;
+				border-radius: 50%;
+			}
+			.top,.bottom{
+				width:150px;
+				height:150px;
+				position: absolute;
+				border-radius:50%;
+				left:50%;
+				margin-left: -75px;
+			}
+			.top{
+				top:0;
+				background: #000;
+			}
+			.bottom{
+				bottom: 0;
+				background: #fff;
+			}
+			.top .circle{
+				background: #fff;
+			}
+			.bottom .circle{
+				background: #000;
+			}
+			@keyframes taiji{
+				form{
+					transform: rotate(0deg);
+				}
+				to{
+					transform:rotate(360deg);
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<div class="wrap">
+			<div class="left"></div>
+			<div class="right"></div>
+			<div class="top">
+				<div class="circle"></div>
+			</div>
+			<div class="bottom">
+				<div class="circle"></div>
+			</div>
+		</div>
+	</body>
+</html>

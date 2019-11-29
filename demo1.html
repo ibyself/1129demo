@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>尺子</title>
+		<style type="text/css">
+			#box{
+				list-style: none;
+				margin: 200px 0 0 200px;
+			}
+			#box li{
+				width:2px;
+				height: 8px;
+				float:left;
+				background: #000;
+				margin-right: 5px;
+				position:relative;
+				counter-increment: num;
+			}
+			#box li:last-child{
+				margin-right: 0;
+			}
+			#box li:nth-child(5n+1){
+				width:3px;
+				height: 12px;
+			}
+			#box li:nth-child(10n+1){
+				height: 16px;
+			}
+			#box li:nth-child(10n)::before{
+				content: counter(num);
+				display: block;
+				position: absolute;
+				left:0;
+				top:30px;
+			}
+			#box li:first-child::before{
+				content: '0';
+				display: block;
+				position: absolute;
+				left:-3px;
+				top:30px;
+				
+			}
+		</style>
+	</head>
+	<body>
+		<ul id="box"></ul>
+		<script type="text/javascript">
+			var box=document.getElementById('box');
+			for (var i = 0; i <= 100; i++) {
+				var li=document.createElement('li');
+				box.appendChild(li);
+			}
+		</script>
+	</body>
+</html>
